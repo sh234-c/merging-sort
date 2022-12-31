@@ -1,0 +1,120 @@
+// PRACTICE QUESTION MERGING OF ARRAYS
+// MERGING OF TWO SORTED ARRAYS
+// #include <stdio.h>
+
+// void mergeArrays(int arr1[],int arr2[],int n1,int n2,int arr3[]){
+//     int i=0,j=0,k=0;
+//     while(i<n1 && j<n2){
+//         if(arr1[i]<arr2[j]){
+//             arr3[k++]=arr1[i++];
+//         }
+//         else{
+//             arr3[k++]=arr2[j++];
+//         }
+//     }
+//     while(i<n1){
+//         arr3[k++]=arr1[i++];
+//     }
+//     while(j<n2){
+//         arr3[k++]=arr2[j++];
+//     }
+// }
+//     int main(){
+//         int arr1[]={1,3,5,7};
+//         int n1=sizeof(arr1)/sizeof(arr1[0]);
+//         int arr2[]={2,4,6,8};
+//         int n2=sizeof(arr2)/sizeof(arr2[0]);
+//         int arr3[n1+n2];
+//         mergeArrays(arr1,arr2,n1,n2,arr3);
+//         printf("\n After merging; \n");
+//           for (int i=0; i < n1+n2; i++) 
+//     {
+//         printf("\n%d", arr3[i]);
+//     }
+//     }
+// GEEKS FOR GEEKS  QUESTION 
+// #include <stdio.h>
+
+// void mergeArrays(int arr1[],int arr2[],int n1,int n2,int arr3[]){
+//     int i=0,j=0,k=0;
+//     while(i<n1 && j<n2){
+//         if(arr1[i]<arr2[j]){
+//             arr3[k++]=arr1[i++];
+//         }
+//         else{
+//             arr3[k++]=arr2[j++];
+//         }
+//     }
+//     while(i<n1){
+//         arr3[k++]=arr1[i++];
+//     }
+//     while(j<n2){
+//         arr3[k++]=arr2[j++];
+//     }
+// }
+// int main(){
+//     int arr1[]={1,2,3,7,9};
+//     int n1=sizeof(arr1)/sizeof(arr1[0]);
+//     int arr2[]={2,5,6};
+//     int n2=sizeof(arr2)/sizeof(arr2[0]);
+//     int arr3[n1+n2];
+//     mergeArrays(arr1,arr2,n1,n2,arr3);
+//     printf("\n After merging;\n");
+//     for(int i=0;i<n1+n2;i++){
+//         printf("\n%d",arr3[i]);
+//     }
+    
+// }
+// MERGING IN A SINGLE ARRAY BY USING PARTS (WE WILL USE RECURSION)
+// #include <stdio.h>
+// // WE WILL PRINT AN ARRAY FIRSTLY
+// void printArray(int*A,int n){
+//     for(int i=0;i<n;i++){
+//         printf("%d",A[i]);
+//     }
+//     printf("\n");
+// }
+// // NOW WE MAKE A FUNCTION FOR MERGING IN A SINGLE ARRAY
+// void merge(int A[],int mid,int low,int high){
+//     int i=0,j=0,k=0,B[100];
+//     i=low;
+//     j=mid+1;
+//     k=low;
+//     while(i<=mid && j<=high){
+//         if(A[i]<A[j]){
+//             B[k++]=A[i++];
+//         }
+//         else{
+//             B[k++]=A[j++];
+//         }
+//     }
+//     // REMAINING ELEMENT OF I AND J 
+//     while(i<=mid){
+//         B[k++]=A[i++];
+//     }
+//     while(j<=high){
+//         B[k++]=A[j++];
+//     }
+//     // NOW WE HAVE TO PLACE ARRAY B IN THAT ARRAY A 
+//     for(int i=low;i<=high;i++){
+//         A[i]=B[i];
+//     }
+// }
+// // USING RECURSIVE FUNCTION
+// void mergeSort(int A[],int low,int high){
+//     int mid;
+//     if(low<high){
+//         mid=(low+high)/2;
+//         mergeSort(A,low,mid);
+//         mergeSort(A,mid+1,high);
+//         merge(A,mid,low,high);
+//     }
+// }
+// int main(){
+//     int A[]={2,6,8,11,10,17,16};
+//     int n=7;
+//     printArray(A,n);
+//     mergeSort(A,0,6);
+//     printArray(A,n);
+//     return 0;
+// }
